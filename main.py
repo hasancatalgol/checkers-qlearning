@@ -6,6 +6,7 @@ from utils import get_static_obstacles
 from game_ui import draw_grid, draw_agents, draw_panel
 from agents import RunnerAgent, ChaserQLearningAgent
 from rules import is_terminal_state, get_chaser_reward
+from db_logger import log_metrics
 
 positions = {"R": (7, 0), "C1": (0, 11), "C2": (0, 12)}
 score = {"C1": 0, "C2": 0}
@@ -64,6 +65,18 @@ def main():
                 f"C2 MaxQ: {max([chaser2.q_table.get((s2, a), 0) for a in chaser2.ACTIONS]):.2f}",
                 f"Q-Size: {len(chaser1.q_table)}"
             ]
+
+            log_metrics([
+                (episode, step, "C1", str(a1), reward_c1,
+                 chaser1.q_table.get((s1, a1), 0),
+                 max([chaser1.q_table.get((s1, a), 0) for a in chaser1.ACTIONS]),
+                 str(positions["C1"]), str(runner_pos)),
+
+                (episode, step, "C2", str(a2), reward_c2,
+                 chaser2.q_table.get((s2, a2), 0),
+                 max([chaser2.q_table.get((s2, a), 0) for a in chaser2.ACTIONS]),
+                 str(positions["C2"]), str(runner_pos))
+            ])
 
             if is_terminal_state(runner_pos, c1_pos, c2_pos):
                 game_active = False

@@ -1,0 +1,13 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "ql-db",
+      "Group": "Local Servers",
+      "Host": "ql-db",
+      "Port": 5432,
+      "MaintenanceDB": "ql",
+      "Username": "admin",
+      "SSLMode": "prefer"
+    }
+  }
+}
