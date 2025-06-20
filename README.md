@@ -41,3 +41,5 @@ CHECKERS-QLEARN/
 ├── utils.py # Grid math and obstacle definitions
 ├── assets/ # Button icons and other visuals
 └── requirements.txt # Install dependencies
+
+---
