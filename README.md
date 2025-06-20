@@ -33,13 +33,12 @@ A simple 8x13 grid-based simulation game with two **chasers (C1, C2)** and one *
 ## 🗂️ File Structure
 CHECKERS-QLEARN/
 │
-├── agents.py # RL agents (Q-learning chasers, random runner)
-├── config.py # Constants and display configuration
-├── game_ui.py # Drawing grid, agents, info panel
-├── main.py # Game loop + integration
-├── rules.py # Game logic rules
-├── utils.py # Grid math and obstacle definitions
-├── assets/ # Button icons and other visuals
-└── requirements.txt # Install dependencies
+├── agents.py         # RL agents (Q-learning chasers, random runner)
+├── config.py         # Constants and display configuration
+├── game_ui.py        # Drawing grid, agents, info panel
+├── main.py           # Game loop and integration
+├── rules.py          # Game logic rules
+├── utils.py          # Grid math and obstacle definitions
+├── assets/           # Button icons and other visuals
+└── requirements.txt  # Install dependencies
 
----
